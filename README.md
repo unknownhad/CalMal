@@ -5,12 +5,14 @@
     You can see/change it in config.ini file. 
 
 # How to install
-`git clone git@github.com:unknownhad/CalMal.git`
-`cd calmal`
-`intall poetry` 
-`poetry shell`
-`poetry install`
-`poetry run python app.py`
+```
+git clone git@github.com:unknownhad/CalMal.git
+cd calmal
+intall poetry
+poetry shell
+poetry install
+poetry run python app.py
+```
 
 # Updating Dependency
 `poetry update`
