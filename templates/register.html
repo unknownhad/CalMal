@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Malware Prediction System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" href="static/images/ico.jpg" type="image/vnd.microsoft.icon" />
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/jquery-ui.css">
+    <link rel="stylesheet" href="static/css/fonts.css">
+    <link rel="stylesheet" href="static/css/main.css">
+    <link rel="stylesheet" href="static/css/hyperaudio-controls.css">
+    <link rel="stylesheet" href="static/css/register/register.css">
+    <link rel="stylesheet" href="static/css/register/register-mediaqueries.css">
+</head>
+<body>
+    <div class="container">
+        <h1 style="padding-left: 100px; text-align:center;"> Malware Behavior Clustering</h1>
+                
+        <div class="row">
+
+            <div id="loading" style="display:none;">
+                Loading Please Wait....
+                <img src="static/images/ajax-loader.gif" alt="Loading" />
+            </div>
+
+            <div id="click-text" ></div>
+            <p></p>
+
+            <div class="custom-uploading">
+                <div class="row" style="width: 45%; margin: 50px auto; display:block;">
+                    <div class="upload-button btn btn-kairos" style="margin: 0px auto;">
+                        <label style="color:#ff0000; font-size:16px; font-weight:bold; display: inline-block; margin-right:20px;">JSON file</label>
+                        <input type="file" id="Add-Text" name="Add Text"  style="display: inline-block;" multiple>
+                    </div>
+                </div>
+            </div>
+            <div class="submit-btn" style="width:100%;">
+                <input type="submit" value="Upload" id="submit-btn" style="width:10%; height:50px; margin:0px 45%;"></button>
+            </div>
+
+        </div>
+
+    </div>
+    <!-- hosted libraries -->
+    <script src="static/js/jquery.min.js"></script>
+    <script src="static/js/jquery-ui.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+
+    <!-- custom libraries -->
+    <script src="static/js/utils.js"></script>
+    <script src="static/js/register/registerDemoApp.js"></script>
+    <script src="static/js/register/registerUi.js"></script>
+    <script src="static/js/exif.js"></script>
+    <script src="static/js/transparentImageData.js"></script>
+    <script src="static/js/jquery.loadingModal.min.js"></script>
+
+    <!-- initialize custom libraries if API credentials are valid -->
+    <!-- Material icons via icomoon: https://design.google.com/icons/ && https://icomoon.io/app -->
+    <div id="play" class="icondiv" style="display: none;">
+        <svg class="iconsvg icon-play_circle_filled"><use xlink:href="#icon-play_circle_filled"></use></svg>
+    </div>
+    <div id="pause" class="icondiv" style="display: none;">
+        <svg class="iconsvg icon-pause_circle_filled"><use xlink:href="#icon-pause_circle_filled"></use></svg>
+    </div>
+
+    <svg style="position: absolute; width: 0; height: 0;" width="0" height="0" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <defs>
+            <symbol id="icon-play_circle_filled" viewBox="0 0 24 24">
+                <title>play_circle_filled</title>
+                <path class="path1" d="M9.984 16.5l6-4.5-6-4.5v9zM12 2.016c5.531 0 9.984 4.453 9.984 9.984s-4.453 9.984-9.984 9.984-9.984-4.453-9.984-9.984 4.453-9.984 9.984-9.984z"></path>
+            </symbol>
+            <symbol id="icon-pause_circle_filled" viewBox="0 0 24 24">
+                <title>pause_circle_filled</title>
+                <path class="path1" d="M15 15.984v-7.969h-2.016v7.969h2.016zM11.016 15.984v-7.969h-2.016v7.969h2.016zM12 2.016c5.531 0 9.984 4.453 9.984 9.984s-4.453 9.984-9.984 9.984-9.984-4.453-9.984-9.984 4.453-9.984 9.984-9.984z"></path>
+            </symbol>
+        </defs>
+    </svg>
+
+
+    <script>
+        registerApp.init({
+            "uploadFileSizeImage":10000000,
+            "uploadFileTypesImage":[
+                ["image/png"],
+                ["image/jpeg"],
+                ["image/jpg"],
+                ["audio/mp3"],
+            ],
+        });
+
+    </script>
+
+</body>
+
+</html>
+

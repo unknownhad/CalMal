@@ -1,0 +1,10 @@
+/* Mouse-pointer/i-cursor from Font Awesome, play/pause/ff/rewind from Material icons, both via icomoon, converted using cursor.cc:
+   http://fontawesome.io && https://design.google.com/icons/ && https://icomoon.io/app && http://www.cursor.cc */
+html.pause { cursor: auto; cursor: url('hyperaudio-controls-pause.cur'), auto; }
+html.play { cursor: auto; cursor: url('hyperaudio-controls-play.cur'), auto; }
+.read { cursor: auto; cursor: url('hyperaudio-controls-rewind.cur'), auto; }
+.unread { cursor: auto; cursor: url('hyperaudio-controls-ff.cur'), auto; }
+.icongrow { opacity: 0; transform: scale(2); transition: transform 0.5s linear, opacity 0.5s linear; }
+.iconsvg { width: 5em; height: 5em; stroke-width: 0; stroke: currentColor; fill: currentColor; }
+.icondiv { position: absolute; margin-left: -2.5em; margin-top: -2.5em; pointer-events: none; }
+audio, video { cursor: auto; }

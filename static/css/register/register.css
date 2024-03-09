@@ -1,0 +1,30 @@
+/* 
+	detect CSS 		
+ 	created: May 2016 
+ 	last modified: March 2017
+	author: Steve Rucker
+*/
+
+.btn:hover {
+	background-color: #078eff;
+	color: white;
+    box-shadow: 0 0 2px #4143ff;
+}
+
+#sttResult {
+    text-align: left !important;
+    display: flex !important;
+    align-items: first baseline !important;
+}
+.url {
+    color: black;
+}
+.upload-button input[type=file] {
+    background-color: #339C8A;
+    width: 400px;
+    color: white;
+    font-size: 25px;
+    text-align: center;
+    opacity: 0.5;
+}
+

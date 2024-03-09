@@ -1,0 +1,16 @@
+umap
+requests
+pandas
+numpy
+matplotlib
+umap-learn
+Flask
+flask-cors
+anycache
+graphviz
+torch
+torchvision
+requests
+Flask-RESTful
+kneed
+scikit-learn
