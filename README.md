@@ -5,7 +5,7 @@
     You can see/change it in config.ini file. 
 
 # How to install
-git clone https://your-repository-url.git
+git clone git@github.com:unknownhad/CalMal.git
 cd calmal
 intall poetry 
     `poetry shell`
