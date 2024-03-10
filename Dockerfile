@@ -1,8 +1,37 @@
-# FROM nvidia/cuda:10.0-cudnn7-runtime
+# Use an NVIDIA CUDA image as the base
 FROM nvidia/cuda:12.3.1-devel-ubi8
+
 ENV LANG C.UTF-8
-# RUN apt-get update -qq && apt-get install -qy python3 python3-dev curl libhdf5-dev nano htop
-# RUN curl https://bootstrap.pypa.io/get-pip.py | python3 -
-# ENV LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:/usr/lib/x86_64-linux-gnu/hdf5/serial/:/usr/local/cuda/lib64"
-# RUN pip install --no-cache-dir numpy click requests tensorflow-gpu==1.14.0 keras pandas matplotlib sklearn umap-learn Flask flask-cors anycache graphviz torch torchvision
+
+RUN dnf update -y && \
+    dnf install -y curl gcc gcc-c++ make && \
+    dnf clean all
+
+RUN curl -O https://www.python.org/ftp/python/3.10.0/Python-3.10.0.tgz && \
+    tar xvf Python-3.10.0.tgz && \
+    cd Python-3.10.0 && \
+    ./configure --enable-optimizations && \
+    make altinstall
+
+RUN curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py && \
+    python3.10 get-pip.py
+
+RUN python3.10 -m pip install setuptools_rust
+
+RUN python3.10 -m pip install poetry
+
+ENV PATH="/root/.local/bin:${PATH}"
+ENV POETRY_VIRTUALENVS_CREATE=false
+
+# Copy the project files into the container
 WORKDIR /Malware-Detection
+COPY . .
+
+# Install the Python dependencies
+RUN poetry install
+
+# Expose the port the app runs on
+EXPOSE 1234
+
+# Command to run the application
+CMD ["poetry", "run", "app.py"]

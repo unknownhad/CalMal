@@ -1,54 +1,41 @@
 # CalMal: Malware-Behavior Clustering
 
-    This project is to detect and classify malware behavior using machine learning.
-    I assume that there's dataset as json files in "data/json" directory. 
-    You can see/change it in config.ini file. 
+## Overview
 
-# How to install
-```
+CalMal is a project focused on detecting and classifying malware behavior using machine learning techniques. It assumes the availability of a dataset in JSON format within the "data/json" directory, which can be modified in the `config.ini` file.
+
+### Requirements
+
+- Python 3
+- Docker (optional, for Docker-based setup)
+- Git
+
+## Installation
+
+### Without Docker
+
+1. **Clone the Repository**
+
+```bash
 git clone git@github.com:unknownhad/CalMal.git
-cd calmal
+cd CalMal
 ```
-intall poetry by folloing this : 
-    `https://python-poetry.org/docs/`
+
+ # Install Poetry : 
+Follow the instructions at [Python Poetry Documentation](https://python-poetry.org/docs/) to install Poetry on your machine.
+
+# Setup the Project Environment:
+
 ```
 poetry shell
 poetry install
+```
+
+# Running the Application:
+```
 poetry run python app.py
 ```
-
-# Updating Dependency
-`poetry update`
-
-# Adding new dependency
-`poetry install`
-
-# Running Test
-`poetry run pytest`
-
-# Accessing Python Shell
-`poetry run python`
-
-
-# Overview
-
-###  Requirements
-
-- Install python and docker on your machine.
-
-```
-sudo apt install python3 pythone3-venv git
-pip3 install -r requirements.txt
-```
-
-
-For web service running, run this script:
-> poetry run python app.py
-
-Then, you can open browser to test prediction by uploading json file;
-```
-localhost:1234
-```
+Access the web service by navigating to http://localhost:1234 in your browser. You can test predictions by uploading a JSON file.
 
 For training : 
 Put all the JSON from VirusTotal to  /data/json then run 
@@ -67,7 +54,17 @@ After that run
 
 For training the model.
 
+### With Docker
+
+
+
 Visualization Result:
 ![Result image](visualize.png)
 
 ###  Contribution guideline
+Contributions to CalMal are welcome! Please follow the established coding and commit message guidelines. For more details, refer to the contribution guide in the repository.
+
+
+### Contact
+
+For questions or contributions, please open an issue or a pull request in the GitHub repository.
