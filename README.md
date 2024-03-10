@@ -8,7 +8,10 @@
 ```
 git clone git@github.com:unknownhad/CalMal.git
 cd calmal
-intall poetry
+```
+intall poetry by folloing this : 
+    `https://python-poetry.org/docs/`
+```
 poetry shell
 poetry install
 poetry run python app.py
