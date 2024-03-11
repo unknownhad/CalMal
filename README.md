@@ -75,7 +75,22 @@ After that run
 
 `poetry run python train.py`
 
-For training the model.
+For training the model and finding the aquracy.
+
+```
+(calmal-py3.11) bash-3.2$ poetry run python train.py
+
+Device used : cpu
+Pytorch version: 2.2.1
+
+Size of training dataset: 857
+Size of testing dataset: 349
+
+Previous checkpoint model found!
+
+Final Accuracy = 0.0057306590257879654
+```
+
 
 ### With Docker
 
