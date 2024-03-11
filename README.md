@@ -48,6 +48,29 @@ After that run :
 `poetry run python data_encoder.py`
 This will encode the baove data ot generate csv file.
 
+Example output :
+
+```
+(calmal-py3.11) bash-3.2$ poetry run python data_encoder.py
+
+Device used : cpu
+Pytorch version: 2.2.1
+
+Loading dataset from: /CalMal/result/temporary/dataset.csv.xz
+
+0
+Name: count, dtype: int64
+
+Epochs [  1/600], Batch [ 5/25], Loss = 0.04834136
+Epochs [  1/600], Batch [10/25], Loss = 0.03662824
+Epochs [  1/600], Batch [15/25], Loss = 0.03420896
+Epochs [  1/600], Batch [20/25], Loss = 0.02952765
+......................Trimmed......................
+......................Trimmed......................
+
+
+```
+
 After that run 
 
 `poetry run python train.py`
