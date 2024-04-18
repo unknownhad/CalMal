@@ -4,6 +4,7 @@ import torch.utils.data
 import pandas as pd
 import numpy as np
 from config import config
+from torch.utils.data.dataloader import default_collate
 
 class Data_Loading(torch.utils.data.Dataset):
     def __init__(self, dataset_path):
@@ -85,6 +86,11 @@ def main():
         optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
         epoch = checkpoint['epoch']
         mals.eval()
+
+    def denoise(x, ratio):
+        noise = np.random.binomial(1, ratio, size=x[0].shape[0])
+        noise = torch.tensor(noise).float().to(device)
+        return (x + noise) % 2
 
     while epoch < num_epochs:
         avg_loss = 0
